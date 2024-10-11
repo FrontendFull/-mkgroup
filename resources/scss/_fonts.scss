@@ -1,0 +1,11 @@
+@import "mixins/fontface";
+
+@include fontface(Akrobat, 900, Black, n);
+@include fontface(Akrobat, 800, ExtraBold, n);
+@include fontface(Akrobat, 700, Bold, n);
+@include fontface(Akrobat, 600, Semibold, n);
+//@include fontface(Akrobat, 500, Medium, n);
+@include fontface(Akrobat, 400, Regular, n);
+@include fontface(Akrobat, 300, Light, n);
+@include fontface(Akrobat, 200, ExtraLight, n);
+@include fontface(Akrobat, 100, Thin, n);

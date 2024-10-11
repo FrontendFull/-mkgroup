@@ -1,0 +1,3 @@
+@function percent($val, $container:$container) {
+  @return calc(#{$val} / #{$container} * 100%);
+}

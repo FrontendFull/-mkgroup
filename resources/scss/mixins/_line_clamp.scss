@@ -1,0 +1,9 @@
+@mixin line-clamp($fz,$row,$line_height:1.2) {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: $row;
+  font-size: #{$fz};
+  line-height: #{$line_height};
+  height: calc(#{$row} * #{$fz} * #{$line_height});
+}

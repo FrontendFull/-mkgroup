@@ -1,0 +1,103 @@
+.company-division {
+    position: relative;
+
+    &:after {
+        content: '';
+        position: absolute;
+        top: 60%;
+        left: 40%;
+        transform: translate(-50%, -50%);
+        width: 40%;
+        max-width: 300px;
+        aspect-ratio: 1;
+        background-color: $color1;
+        border-radius: 50%;
+        filter: blur(200px);
+        @include breakpoint(lg-down) {
+            top: 30%;
+            left: 50%;
+        }
+        @include breakpoint(xs){
+            filter: blur(150px);
+        }
+    }
+}
+
+.company-title {
+    @include breakpoint(lg-up) {
+        position: sticky;
+        top: 200px;
+    }
+}
+
+.company-inner {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 0 10px;
+    @include breakpoint(lg-down) {
+        flex-direction: column;
+    }
+}
+
+.company-info {
+    max-width: 940px;
+    display: flex;
+    flex-direction: column;
+
+    &__text {
+        font-weight: 600;
+        font-size: customClamp(24, 18);
+        margin-bottom: customClamp(20, 16);
+    }
+
+    &__text-alt {
+        color: $text-color-alt;
+        margin-bottom: customClamp(40, 18);
+    }
+
+    &__row {
+        @include flex-mesh(20, 10, (default: 3, smxs: 1));
+        margin-bottom: customClamp(60, 20);
+        @include breakpoint(smxs) {
+            order: 4;
+        }
+    }
+
+    &__card {
+        padding: customClamp(20, 10) 20px;
+        border: 2px solid rgba($text-color-alt, .15);
+        background-color: rgba($text-color, .05);
+        border-radius: customClamp(20, 15);
+        display: flex;
+        flex-direction: column;
+        gap: 8px 20px;
+        @include breakpoint(smxs) {
+            flex-direction: row;
+            align-items: center;
+        }
+    }
+
+    &__card-title {
+        font-size: customClamp(100, 64);
+        color: $color1;
+        @include breakpoint(smxs) {
+            min-width: 115px;
+        }
+    }
+
+    &__card-text {
+        font-size: 18px;
+        font-weight: 600;
+    }
+
+    &__image {
+        @include imageSize(940, 395);
+        border-radius: customClamp(40, 15);
+        @include breakpoint(smxs) {
+            order: 3;
+            margin-bottom: 20px;
+        }
+    }
+
+}

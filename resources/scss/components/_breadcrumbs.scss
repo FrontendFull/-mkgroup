@@ -1,0 +1,65 @@
+.breadcrumbs-wrap{
+  width: 100%;
+  overflow-x: auto;
+  margin: 0 0 customClamp(50,20);
+
+}
+.breadcrumbs {
+  display: flex;
+  align-items: center;
+  overflow-x: auto;
+  padding-bottom: 10px;
+  width: max-content;
+  font-size: 0;
+  list-style: none;
+  margin: 0;
+  gap: 8px;
+
+
+  li {
+    list-style: none;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    &:after {
+      content: "/";
+      font-size: 14px;
+      color: $color1;
+    }
+
+    &.active, &:hover {
+      a {
+        text-decoration: none;
+      }
+    }
+
+    &:last-child {
+      &:after {
+        content: none;
+      }
+
+      a {
+        pointer-events: none;
+        color: inherit;
+        opacity: 1;
+      }
+    }
+  }
+
+  a {
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    display: inline-block;
+    text-decoration: none;
+    transition: .4s;
+    width: max-content;
+    color: $color1;
+    @include hover{
+      opacity: 1;
+      color: $color1;
+    }
+  }
+}

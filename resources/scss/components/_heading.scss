@@ -1,0 +1,51 @@
+$heading_count: 6;
+
+$list: '';
+@for $i from 1 through $heading_count {
+    @if ($i == 1) {
+        $list: "h#{$i}, .h#{$i}"
+    } @else {
+        $list: $list + ", h#{$i}, .h#{$i}"
+    }
+}
+
+#{$list} {
+    font-family: $font-family-headings;
+    font-size: 100%;
+    font-weight: normal;
+    line-height: 1;
+}
+
+@for $i from 1 through $heading_count {
+    $margin-max: nth($heading-margin-max, $i);
+    $margin-min: nth($heading-margin-min, $i);
+    $size-max: nth($heading-size-max, $i);
+    $size-min: nth($heading-size-min, $i);
+    $uppercase: nth($heading-uppercase, $i);
+    $text-align: nth($heading-text-align, $i);
+    $weight: nth($heading-font-weight, $i);
+
+    #{"h#{$i}, .h#{$i}"} {
+        @if ($uppercase != 0) {
+            text-transform: uppercase;
+        }
+        @if ($text-align != "l") {
+            @if ($text-align == "c") {
+                text-align: center;
+            } @else if ($text-align == "r") {
+                text-align: right;
+            }
+        }
+        @if ($weight != 1) {
+            font-weight: $weight;
+        }
+        font-size: customClamp($size-max, $size-min);
+        margin-bottom: customClamp($margin-max, $margin-min);
+        color: $heading-color;
+
+        span {
+            color: $color1;
+            font-weight: 600;
+        }
+    }
+}

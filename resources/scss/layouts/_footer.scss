@@ -1,0 +1,12 @@
+.footer-inner{
+    padding: 15px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    span{
+        color: $text-color-alt;
+        z-index: customClamp(18,12);
+        font-weight: 600;
+    }
+}

@@ -1,0 +1,16 @@
+.partners-mesh {
+    @include flex-mesh(20,8,(default: 6, md-down: 4, xs: 3))
+}
+
+.partner-card {
+    padding: customClamp(30,15) customClamp(10,5);
+    background-color: $background-color-alt;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &__image{
+        max-width: customClamp(130,70);
+        max-height: customClamp(80,40);
+    }
+}

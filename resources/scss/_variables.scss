@@ -1,0 +1,42 @@
+$font-family: 'Akrobat', sans-serif;
+$font-family-alt: $font-family;
+$font-family-validation: $font-family;
+$font-family-headings: $font-family-alt;
+
+$container: 1420;
+$maxScreen: 1500;
+$minScreen: 500;
+
+$text-color: #FFFFFF;
+$text-color-alt: rgba($text-color, .5);
+$heading-color: $text-color;
+$background-color: #000000;
+$background-color-alt: #0F0F0F;
+$color1: #BD1621;
+
+
+$link-color: inherit;
+$link-hover-color: $color1;
+
+
+$font-size: customClamp(16, 14);
+$paragraph-margin: 1em; //margin-bottom
+$paragraph-height: 1.4; //line-height
+$list-image: false; //list.png
+
+$heading-size-max: 100, 56, 32, 28, 24, 20;
+$heading-size-min: 36, 26, 24, 20, 18, 16;
+$heading-margin-max: 36, 30, 25, 20, 20, 20;
+$heading-margin-min: 25, 15, 15, 15, 15, 15;
+$heading-font-weight: 400,400, 400, 400, 400, 400; // 1 = "normal"(400)
+$heading-uppercase: 0, 0, 0, 0, 0, 0; // 0 = "none", 1 = "uppercase"
+$heading-text-align: l, l, l, l, l, l; // c = "center", l = "left", r = "right"
+
+
+$table-border-color: #d6d6d6;
+$table-color: #3c3c3c;
+$table-heading-color: false;
+
+$z-index-blocker: 9;
+$z-index-modal: 10;
+$z-index-close-modal: 11;

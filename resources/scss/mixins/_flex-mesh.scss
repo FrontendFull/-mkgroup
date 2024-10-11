@@ -1,0 +1,44 @@
+@mixin flex-mesh($maxList, $minList, $list) {
+
+  $min_X: 0;
+  $min_Y: 0;
+  $max_X: 0;
+  $max_Y: 0;
+
+  @if (length($minList) != 1) {
+    $min_X: nth($minList, 1);
+    $min_Y: nth($minList, 2);
+  } @else {
+    $min_X: nth($minList, 1);
+    $min_Y: nth($minList, 1);
+  }
+
+  @if (length($maxList) != 1) {
+    $max_X: nth($maxList, 1);
+    $max_Y: nth($maxList, 2);
+  } @else {
+    $max_X: nth($maxList, 1);
+    $max_Y: nth($maxList, 1);
+  }
+
+  display: flex;
+  flex-wrap: wrap;
+  gap: customClamp($max_X, $min_X) customClamp($max_Y, $min_Y);
+  & > * {
+    flex: 0 1 auto;
+  }
+
+  @each $breakpoint, $count in $list {
+    @if ($breakpoint == default) {
+      & > * {
+        flex-basis: calc-width($max_Y, $min_Y, $count);
+      }
+    } @else {
+      @include breakpoint(#{$breakpoint}) {
+        & > * {
+          flex-basis: calc-width($max_Y, $min_Y, $count);
+        }
+      }
+    }
+  }
+}

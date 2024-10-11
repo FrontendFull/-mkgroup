@@ -1,0 +1,132 @@
+%buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: .4s;
+    gap: 10px;
+
+    input {
+        display: none;
+    }
+
+    svg, img {
+        width: 1em;
+        height: 1em;
+        fill: currentColor;
+    }
+}
+
+
+.button {
+    @extend %buttons;
+    width: fit-content;
+    min-height: 60px;
+    padding: 10px customClamp(25,15);
+    border-radius: 100px;
+    background-color: $color1;
+    border: 1px solid $color1;
+    color: $text-color;
+    text-transform: uppercase;
+    font-size: customClamp(16, 14);
+    font-weight: 800;
+
+    @include hover {
+        color: $text-color;
+        background-color: $background-color;
+    }
+}
+
+
+.nav-slider {
+    display: flex;
+    align-items: center;
+    gap: customClamp(10, 5);
+}
+
+.slick-arrow {
+    @extend %buttons;
+    width: customClamp(60, 45, 1800, 1200);
+    height: customClamp(60, 45, 1800, 1200);
+    border-radius: 50%;
+    background: transparent;
+    border: 1px solid $color1;
+    z-index: 2;
+    flex-shrink: 0;
+    color: $text-color;
+    cursor: pointer;
+
+    .icon {
+        width: 30%;
+        height: 30%;
+        fill: currentColor;
+    }
+
+    @include hover {
+        background-color: $color1;
+        border-color: $color1;
+    }
+}
+
+.slick-dots {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    gap: 10px;
+    margin: 0;
+
+    li {
+        margin: 0;
+        height: 2px;
+        flex: 0 1 55px;
+        background-color: $text-color;
+        transition: .4s;
+        list-style: none;
+
+        &.slick-active {
+            background-color: $color1;
+        }
+
+        button {
+            display: none;
+        }
+    }
+}
+
+
+
+.social-label{
+    padding: 5px;
+    width: fit-content;
+    background-color: $background-color;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+.social-list{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.social-item{
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid $color1;
+    border-radius: 50%;
+    background-color: transparent;
+
+    &:hover{
+        background-color: $color1;
+    }
+
+    .icon{
+        fill: $text-color;
+        width: 50%;
+        height: 50%;
+    }
+}

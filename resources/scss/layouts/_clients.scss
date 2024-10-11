@@ -1,0 +1,93 @@
+.clients-division{
+    position: relative;
+    z-index: 0;
+
+    &:after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        right: 10%;
+        transform: translate(0, -50%);
+        width: 40%;
+        max-width: 700px;
+        aspect-ratio: 1;
+        background-color: $background-color;
+        border-radius: 50%;
+        filter: blur(100px);
+        z-index: 1;
+        @include breakpoint(sm-down){
+            top: 5%;
+            right: 50%;
+            transform: translate(50%, 0%);
+            background-color: $color1;
+            filter: blur(200px);
+            z-index: -2;
+        }
+        @include breakpoint(mxs){
+            filter: blur(150px);
+        }
+    }
+}
+
+.clients-deco{
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: -1;
+    @include breakpoint(sm-down){
+        width: 100%;
+        top: 10%;
+        transform: translateY(0%);
+    }
+}
+
+
+.clients-inner{
+    display: flex;
+    @include breakpoint(sm-down){
+        flex-direction: column;
+        gap: 25px;
+    }
+}
+
+.clients-image{
+    @include imageSize(1123, 731, 0 , contain);
+    @include breakpoint(sm-up) {
+        margin-right: -200px;
+    }
+}
+
+.clients-info {
+    width: 100%;
+    position: relative;
+    z-index: 2;
+    @include breakpoint(sm-up){
+        max-width: 460px;
+    }
+
+    &__text {
+        font-size: customClamp(24,18);
+        font-weight: 600;
+        margin-bottom: 20px;
+    }
+
+    &__text-alt {
+        color: $text-color-alt;
+        margin-bottom: 20px;
+    }
+
+    &__countries {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    &__country {
+        padding: 10px 25px;
+        font-size: customClamp(24,14);
+        font-weight: 700;
+        border-radius: 10px;
+        background-color: $color1;
+    }
+}

@@ -1,0 +1,114 @@
+.trademarks-division{
+    position: relative;
+    z-index: 0;
+
+    &:after {
+        content: '';
+        position: absolute;
+        top: 25%;
+        right: 10%;
+        width: 40%;
+        max-width: 350px;
+        aspect-ratio: 1;
+        background-color: $color1;
+        border-radius: 50%;
+        filter: blur(200px);
+        z-index: -1;
+        @include breakpoint(xs){
+            top: 10%;
+            right: 10%;
+            filter: blur(75px);
+        }
+    }
+}
+
+.trademarks-slider-nav {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-radius: 100px;
+    padding: 10px;
+    overflow: hidden;
+    z-index: 0;
+    position: relative;
+
+    &:after {
+        content: '';
+        @include centering-size();
+        filter: blur(10px);
+        z-index: -1;
+        background-color: rgba($text-color, .05);
+    }
+}
+
+.trademarks-slider.slick-slider{
+    .slick-track{
+        display: flex;
+    }
+    margin: 0 calc(-1 * #{customClamp(10,5)});
+    .slick-slide{
+        margin: 0 customClamp(10,5);
+        height: auto;
+        &>div{
+            height: 100%;
+        }
+    }
+}
+
+.trademark-card {
+    border: 1px solid rgba($text-color, .1);
+    border-radius: 10px;
+    display: flex!important;
+    flex-direction: column;
+    height: 100%;
+    &__image {
+        background-color: rgba($text-color, .05);
+        @include imageSize(270,170, 0, contain);
+        border-radius: 10px;
+        img{
+            width: 90%;
+            height: 90%;
+            max-width: 205px;
+            max-height: 105px;
+        }
+    }
+
+    &__info {
+        display: flex;
+        flex-direction: column;
+        flex: 1 1 auto;
+        gap: 8px;
+        padding: 10px customClamp(20,15) customClamp(20,15);
+    }
+
+    &__title {
+        font-size: customClamp(28,18);
+        font-weight: 600;
+        text-transform: uppercase;
+    }
+
+    &__text {
+        flex: 1 1 auto;
+        color: $text-color-alt;
+    }
+
+    &__link {
+        width: fit-content;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        color: $color1;
+        text-transform: uppercase;
+        font-weight: 700;
+
+        .icon {
+            fill: currentColor;
+            width: 1em;
+            height: 1em;
+        }
+
+        @include hover{
+            color: $text-color;
+        }
+    }
+}

@@ -1,0 +1,34 @@
+@mixin desktop {
+  @media (hover: hover) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media (hover: none) {
+    @content;
+  }
+}
+
+@mixin hover {
+  @media (hover: hover) {
+    cursor: pointer;
+    transition: .4s;
+    &:hover {
+      @content;
+    }
+  }
+}
+
+@mixin hover-active {
+  @media (hover: hover) {
+    &:hover {
+      @content;
+    }
+  }
+  @media (hover: none) {
+    &:active {
+      @content;
+    }
+  }
+}

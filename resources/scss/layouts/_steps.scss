@@ -1,0 +1,153 @@
+.steps-division {
+    .title-division {
+        margin-bottom: -10px;
+    }
+
+    max-width: 1820px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.steps-inner {
+    position: relative;
+    z-index: 0;
+    padding-top: customClamp(90, 45);
+    padding-bottom: customClamp(120, 60);
+}
+
+.steps-bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    z-index: -1;
+    border-radius: customClamp(100, 40);
+    opacity: .25;
+}
+
+.steps-mesh {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    position: relative;
+
+    &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        height: 100%;
+        width: 1px;
+        background: linear-gradient(
+                to bottom,
+                rgba($background-color, 1) 0%, /* Прозрачность с самого начала */
+                rgba($background-color, 0) 10%, /* Прозрачность плавно переходит в цвет */
+                rgba($background-color, 0) 90%, /* Цвет продолжается до 90% */
+                rgba($background-color, 1) 100% /* Переход обратно в прозрачность на концах */
+        ),
+        repeating-linear-gradient(
+                to bottom,
+                rgba($text-color, 1) 0, /* Начало черточки */
+                rgba($text-color, 1) 5px, /* Длина черточки 5px */
+                rgba($text-color, 0) 5px, /* Прозрачная часть */
+                rgba($text-color, 0) 10px /* Шаг между черточками 10px */
+        );
+
+
+        background-blend-mode: multiply; /* Слияние градиентов */
+    }
+}
+
+.steps-column {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: customClamp(60, 50);
+
+    &__left {
+        .step-card{
+            &:after {
+                right: customClamp(30,20);
+            }
+            &:before{
+                right: 0;
+                transform: translate(50%,-50%);
+            }
+        }
+    }
+
+    &__right {
+        .step-card {
+            &__info{
+                margin-left: auto;
+            }
+            &:after {
+                left: customClamp(30,20);
+            }
+            &:before{
+                left: 0;
+                transform: translate(-50%,-50%);
+            }
+        }
+    }
+}
+
+.step-card {
+    width: 100%;
+    position: relative;
+
+    &__info{
+        padding: customClamp(30, 10);
+        background-color: $background-color-alt;
+        width: 80%;
+        max-width: 580px;
+        border: 1px solid rgba($text-color, .05);
+        border-radius: customClamp(30, 15);
+        position: relative;
+        z-index: 2;
+    }
+
+    &:after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 14%;
+        height: 1px;
+        background:  repeating-linear-gradient(
+                90deg,
+                rgba($text-color, 1) 0, /* Начало черточки */
+                rgba($text-color, 1) 5px, /* Длина черточки 5px */
+                rgba($text-color, 0) 5px, /* Прозрачная часть */
+                rgba($text-color, 0) 10px /* Шаг между черточками 10px */
+        );
+    }
+
+    &:before{
+        content: '';
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: customClamp(24,18);
+        height: customClamp(24,18);
+        border-radius: 50%;
+        border: customClamp(5,3) solid $text-color;
+        background: $color1;
+
+    }
+
+    &__title {
+        text-transform: uppercase;
+        color: $color1;
+        font-size: customClamp(56, 36);
+        margin-bottom: 6px;
+    }
+
+    &__text {
+        font-size: customClamp(18, 12);
+        line-height: 1.5;
+    }
+}
