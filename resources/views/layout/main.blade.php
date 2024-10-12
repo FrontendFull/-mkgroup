@@ -3,16 +3,18 @@
 
 @section('content')
     <div class="banner">
-        <img class="banner-deco" src="/images/banner-deco.webp" alt="#">
+        <img class="banner-deco" data-aos="fade-up" src="/images/banner-deco.webp" alt="#">
         <div class="container">
             <div class="banner__info">
-                <div class="banner__title h1">Lorem ipsum dolor <span>sit amet</span> consectetur</div>
-                <div class="banner__text">Lorem ipsum dolor sit amet consectetur. Pharetra velit tincidunt velit nam at
+                <div class="banner__title h1" data-aos="fade-up">Lorem ipsum dolor <span>sit amet</span> consectetur
+                </div>
+                <div class="banner__text" data-aos="fade-up">Lorem ipsum dolor sit amet consectetur. Pharetra velit
+                    tincidunt velit nam at
                     aliquet adipiscing eu tortor. Tortor ac pharetra dictum metus.
                 </div>
             </div>
         </div>
-        <div class="container">
+        <div class="container" data-aos="fade-up">
             <div class="banner-slider-wrap">
                 <div class="banner-slider-buttons">
                     <div class="banner-slider-nav"></div>
@@ -37,11 +39,11 @@
     <div class="company-division  anchor-wrap container my-content">
         <div class="anchor" id="company"></div>
         <div class="company-inner">
-            <h1 class="company-title"> Про нас</h1>
+            <h1 class="company-title" data-aos="fade-right"> Про нас</h1>
             <div class="company-info">
-                <div class="company-info__text">{{ fake()->sentence(20) }}</div>
-                <div class="company-info__text-alt">{{ fake()->sentence(65) }}</div>
-                <div class="company-info__row">
+                <div class="company-info__text" data-aos="fade-up">{{ fake()->sentence(20) }}</div>
+                <div class="company-info__text-alt" data-aos="fade-up">{{ fake()->sentence(65) }}</div>
+                <div class="company-info__row" data-aos="fade-up">
                     <div class="company-info__card">
                         <div class="company-info__card-title" data-number="{{fake()->randomNumber(4)}}">0</div>
                         <div class="company-info__card-text">{{ fake()->sentence(6) }}</div>
@@ -55,7 +57,7 @@
                         <div class="company-info__card-text">{{ fake()->sentence(6) }}</div>
                     </div>
                 </div>
-                <div class="company-info__image">
+                <div class="company-info__image" data-aos="fade-up">
                     <img src="https://picsum.photos/940/395" alt="#">
                 </div>
             </div>
@@ -64,7 +66,7 @@
 
     <div class="services-division  anchor-wrap container my-content">
         <div class="anchor" id="services"></div>
-        <div class="title-wrap">
+        <div class="title-wrap" data-aos="fade-up">
             <div class="h1 title-division">Наші <span>послуги</span></div>
             <div class="button">
                 <span>Дивитись повністю</span>
@@ -72,7 +74,7 @@
         </div>
         <div class="services-mesh">
             @for ($i = 1; $i <= 4; $i++)
-                <div class="service-card">
+                <div class="service-card" data-aos="fade-up">
                     <div class="service-card__image">
                         <img src="https://picsum.photos/810/400" alt="#">
                     </div>
@@ -98,12 +100,12 @@
 
     <div class="trademarks-division  anchor-wrap container my-content">
         <div class="anchor" id="trademarks"></div>
-        <div class="title-wrap">
+        <div class="title-wrap" data-aos="fade-up">
             <div class="h1 title-division">Наші торгові <span>марки</span></div>
             <div class="trademarks-slider-nav">
             </div>
         </div>
-        <div class="trademarks-slider trademarks-mesh">
+        <div class="trademarks-slider trademarks-mesh" data-aos="fade-up">
             @for ($i = 1; $i <= 3; $i++)
                 <div class="trademark-card">
                     <div class="trademark-card__image">
@@ -149,7 +151,7 @@
                     <div class="steps-column steps-column__left">
                         <div class="h1 title-division">Схема <span>роботи</span></div>
                         @for ($i = 1; $i <= 2; $i++)
-                            <div class="step-card">
+                            <div class="step-card" data-aos="fade-right">
                                 <div class="step-card__info">
                                     <div class="step-card__title">План на 2025</div>
                                     <div class="step-card__text">{{ fake()->sentence(40) }}</div>
@@ -159,7 +161,7 @@
                     </div>
                     <div class="steps-column steps-column__right">
                         @for ($i = 1; $i <= 2; $i++)
-                            <div class="step-card">
+                            <div class="step-card" data-aos="fade-left">
                                 <div class="step-card__info">
                                     <div class="step-card__title">План на 2025</div>
                                     <div class="step-card__text">{{ fake()->sentence(40) }}</div>
@@ -174,14 +176,14 @@
 
     <div class="partners-division  anchor-wrap container my-content">
         <div class="anchor" id="partners"></div>
-        <div class="h1 title-division">Партнери</div>
+        <div class="h1 title-division" data-aos="fade-up">Партнери</div>
         <div class="partners-mesh">
             @for ($i = 1; $i <= 3; $i++)
-                <div class="partner-card">
+                <div class="partner-card" data-aos="zoom-in">
                     <img class="partner-card__image" src="https://picsum.photos/130/50" alt="#">
                 </div>
                 {{--  другой формат можна удалить --}}
-                <div class="partner-card">
+                <div class="partner-card" data-aos="zoom-in">
                     <img class="partner-card__image" src="https://picsum.photos/100/100" alt="#">
                 </div>
             @endfor
@@ -194,10 +196,10 @@
         <div class="container">
             <div class="clients-info__title h1 show-mobile-sm text-center">Географія <span>клієнтів</span></div>
             <div class="clients-inner">
-                <div class="clients-image">
+                <div class="clients-image" data-aos="fade-right">
                     <img src="/images/world.webp" alt="#">
                 </div>
-                <div class="clients-info">
+                <div class="clients-info" data-aos="fade-left">
                     <div class="clients-info__title h1 show-desktop-sm">Географія <span>клієнтів</span></div>
                     <div class="clients-info__text">{{ fake()->sentence(20) }}</div>
                     <div class="clients-info__text-alt">{{ fake()->sentence(65) }}</div>
@@ -216,7 +218,7 @@
         <img class="contacts-bg" src="/images/contatcs.webp" alt="#">
         <div class="container">
             <div class="contacts-inner">
-                <div class="form callback-form">
+                <div class="form callback-form" data-aos="fade-right">
                     <div class="validation custom-form">
                         <form>
                             @csrf
@@ -254,7 +256,7 @@
                         </form>
                     </div>
                 </div>
-                <div class="contacts-info">
+                <div class="contacts-info" data-aos="fade-left">
                     <h1 class="contacts-info__title title-division">Контакти</h1>
                     <a class="contacts-info__link" href="https://www.google.com/maps/search/вул. Велика Арнаутська, 15"
                        target="_blank">

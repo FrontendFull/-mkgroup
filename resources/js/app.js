@@ -1,6 +1,7 @@
 import $ from "jquery";
 import './bootstrap';
 import 'slick-slider'
+import AOS from 'aos/dist/aos';
 import {Fancybox} from "@fancyapps/ui";
 
 
@@ -216,6 +217,9 @@ $(document).ready(function () {
         checkWindowSize();
     });
 
+    AOS.init({
+        offset: window.innerHeight / 3
+    });
 })
 
 function form() {
