@@ -36,6 +36,10 @@ body {
     }
 }
 
+.overflow-x {
+    overflow-x: hidden;
+}
+
 /* width */
 ::-webkit-scrollbar {
     width: .4em;

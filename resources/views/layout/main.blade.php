@@ -2,7 +2,7 @@
 @section('class', 'main-page-page')
 
 @section('content')
-    <div class="banner">
+    <div class="banner overflow-x">
         <img class="banner-deco" data-aos="fade-up" src="/images/banner-deco.webp" alt="#">
         <div class="container">
             <div class="banner__info">
@@ -142,7 +142,7 @@
         </div>
     </div>
 
-    <div class="steps-division  anchor-wrap my-content">
+    <div class="steps-division  anchor-wrap my-content overflow-x">
         <div class="anchor" id="steps"></div>
         <div class="steps-inner">
             <img class="steps-bg" src="/images/steps-bg.webp" alt="#">
@@ -174,7 +174,7 @@
         </div>
     </div>
 
-    <div class="partners-division  anchor-wrap container my-content">
+    <div class="partners-division  anchor-wrap container my-content overflow-x">
         <div class="anchor" id="partners"></div>
         <div class="h1 title-division" data-aos="fade-up">Партнери</div>
         <div class="partners-mesh">
@@ -190,7 +190,7 @@
         </div>
     </div>
 
-    <div class="clients-division  anchor-wrap my-content">
+    <div class="clients-division  anchor-wrap my-content overflow-x">
         <div class="anchor" id="clients"></div>
         <img class="clients-deco" src="/images/clients-deco.webp" alt="#">
         <div class="container">
@@ -213,7 +213,7 @@
         </div>
     </div>
 
-    <div class="contacts-division anchor-wrap">
+    <div class="contacts-division anchor-wrap overflow-x">
         <div class="anchor" id="contacts"></div>
         <img class="contacts-bg" src="/images/contatcs.webp" alt="#">
         <div class="container">
